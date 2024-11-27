@@ -84,7 +84,7 @@ Tabla `DetalleAlquiler`
 | 103        | Sedán         |
 | 104        | Sedán         |
 
-Clave primaria compuesta: (AlquilerID, Vehiculo).
+Clave primaria compuesta: _AlquilerID_, _Vehiculo_
 
-Tercera Forma Normal (3FN)
+### Tercera Forma Normal (3FN)
 Las tablas ya cumplen con la 3FN.

@@ -1,4 +1,6 @@
+## Ejercicio 5
 
+En una universidad, se lleva un registro de cursos, estudiantes y sus calificaciones.
 
 | RegistroID | EstudianteID | NombreEstudiante | Cursos                   | Profesor        | Notas          | Departamento |
 |------------|--------------|------------------|--------------------------|-----------------|----------------|--------------|
@@ -8,7 +10,8 @@
 | 4          | 204          | Mario            | "Química"                | "Dr. Pérez"     | "75"           | Ciencias     |
 
 
-Primera Forma Normal (1FN)
+### Primera Forma Normal (1FN)
+
 Separar los valores no atómicos en filas individuales:
 
 | RegistroID | EstudianteID | NombreEstudiante | Curso         | Profesor    | Nota | Departamento |
@@ -21,9 +24,9 @@ Separar los valores no atómicos en filas individuales:
 | 3          | 203          | Julia            | Literatura    | Dr. Gómez   | 80   | Humanidades  |
 | 4          | 204          | Mario            | Química       | Dr. Pérez   | 75   | Ciencias     |
 
-Clave primaria: (RegistroID, Curso)
+Clave primaria: _RegistroID_, _Curso_
 
-Segunda Forma Normal (2FN)
+### Segunda Forma Normal (2FN)
 
 __Identificación de dependencias funcionales:__
     *EstudianteID → NombreEstudiante (el nombre depende del ID del estudiante).
@@ -32,7 +35,7 @@ __Identificación de dependencias funcionales:__
 __Paso 2: Crear tablas para eliminar dependencias parciales.__
 Se crean tablas para Estudiantes, Cursos y Notas.
 
-Tabla Estudiantes
+Tabla `Estudiantes`
 
 | EstudianteID | NombreEstudiante |
 |--------------|------------------|
@@ -41,9 +44,9 @@ Tabla Estudiantes
 | 203          | Julia            |
 | 204          | Mario            |
 
-Clave primaria: EstudianteID
+Clave primaria: _EstudianteID_
 
-Tabla Cursos
+Tabla `Cursos`
 
 | Curso         | Profesor    | Departamento |
 |---------------|-------------|--------------|
@@ -53,9 +56,9 @@ Tabla Cursos
 | Historia      | Dr. Gómez   | Humanidades  |
 | Literatura    | Dr. Gómez   | Humanidades  |
 
-Clave primaria: Curso
+Clave primaria: _Curso_
 
-Tabla Notas
+Tabla `Notas`
 
 | EstudianteID | Curso         | Nota |
 |--------------|---------------|------|
@@ -67,7 +70,8 @@ Tabla Notas
 | 203          | Literatura    | 80   |
 | 204          | Química       | 75   |
 
-Clave primaria compuesta: (EstudianteID, Curso)
+Clave primaria compuesta: _EstudianteID_, _Curso_
 
-Tercera Forma Normal (3FN)
+## Tercera Forma Normal (3FN)
+
 No existen dependencias transitivas. Las tablas ya cumplen con la 3FN.

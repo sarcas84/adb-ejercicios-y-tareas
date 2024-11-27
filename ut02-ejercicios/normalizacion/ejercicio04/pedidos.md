@@ -1,4 +1,6 @@
+## Ejercicio 4
 
+Una tienda de suministros almacena los datos de sus pedidos en la siguiente tabla Pedidos
 
 | PedidoID | FechaPedido | ClienteID | ClienteNombre | ProductoID | ProductoNombre | Cantidad | PrecioUnitario |
 |----------|-------------|-----------|---------------|------------|----------------|----------|----------------|
@@ -9,12 +11,13 @@
 | 303      | 07/04/2023  | 503       | Luis          | 1004       | Borrador       | 4        | 0.3            |
 
 
-Primera Forma Normal (1FN)
+### Primera Forma Normal (1FN)
+
 Esta tabla ya cumple con la 1FN, pues todos los valores son atómicos.
 
-Clave primaria: (PedidoID, ProductoID) (una combinación única identifica cada fila).
+Clave primaria: _PedidoID_, _ProductoID_ (una combinación única identifica cada fila).
 
-Segunda Forma Normal (2FN)
+### Segunda Forma Normal (2FN)
 
 __Identificación de dependencias funcionales:__
     *ClienteID → ClienteNombre (los datos del cliente dependen de su ID).
@@ -23,7 +26,7 @@ __Identificación de dependencias funcionales:__
 __Paso 2: Crear tablas para eliminar dependencias parciales.__
 Se crean tablas para Clientes, Productos, Pedidos y DetallePedidos.
 
-Tabla Clientes
+Tabla `Clientes`
 
 | ClienteID | ClienteNombre |
 |-----------|---------------|
@@ -31,20 +34,9 @@ Tabla Clientes
 | 502       | María         |
 | 503       | Luis          |
 
-Clave primaria: ClienteID
+Clave primaria: _ClienteID_
 
-Tabla Productos
-
-| ProductoID | ProductoNombre | PrecioUnitario |
-|------------|----------------|----------------|
-| 1001       | Lápiz          | 0.5            |
-| 1002       | Cuaderno       | 1.5            |
-| 1003       | Bolígrafo      | 0.8            |
-| 1004       | Borrador       | 0.3            |
-
-Clave primaria: ProductoID
-
-Tabla Pedidos
+Tabla `Productos`
 
 | ProductoID | ProductoNombre | PrecioUnitario |
 |------------|----------------|----------------|
@@ -53,9 +45,20 @@ Tabla Pedidos
 | 1003       | Bolígrafo      | 0.8            |
 | 1004       | Borrador       | 0.3            |
 
-Clave primaria: PedidoID
+Clave primaria: _ProductoID_
 
-Tabla DetallePedidos
+Tabla `Pedidos`
+
+| ProductoID | ProductoNombre | PrecioUnitario |
+|------------|----------------|----------------|
+| 1001       | Lápiz          | 0.5            |
+| 1002       | Cuaderno       | 1.5            |
+| 1003       | Bolígrafo      | 0.8            |
+| 1004       | Borrador       | 0.3            |
+
+Clave primaria: _PedidoID_
+
+Tabla `DetallePedidos`
 
 | PedidoID | ProductoID | Cantidad |
 |----------|------------|----------|
@@ -65,7 +68,8 @@ Tabla DetallePedidos
 | 303      | 1001       | 12       |
 | 303      | 1004       | 4        |
 
-Clave primaria compuesta: (PedidoID, ProductoID)
+Clave primaria compuesta: _PedidoID_, _ProductoID_
 
-Tercera Forma Normal (3FN)
+### Tercera Forma Normal (3FN)
+
 No existen dependencias transitivas, por lo que las tablas ya cumplen con la 3FN.
