@@ -1,4 +1,6 @@
+## Ejercicio 3
 
+En una base de datos de una empresa de alquiler de vehículos, se tiene la siguiente tabla Alquileres que contiene información sobre los vehículos alquilados y sus conductores.
 
 | AlquilerID | FechaAlquiler | ClienteID | ClienteNombre | Vehiculos                  | PrecioVehiculos |
 |------------|---------------|-----------|---------------|----------------------------|-----------------|
@@ -8,7 +10,7 @@
 | 104        | 18/03/2023    | 204       | Ana           | "Sedán"                    | "50"           |
 
 
-Primera Forma Normal (1FN)
+### Primera Forma Normal (1NF)
 
 __Paso 1: Eliminar valores no atómicos__
 La columna Vehiculos y PrecioVehiculos contiene valores múltiples. Separamos cada combinación en filas individuales.
@@ -24,9 +26,9 @@ La columna Vehiculos y PrecioVehiculos contiene valores múltiples. Separamos ca
 | 103        | 15/03/2023    | 203       | Pedro         | Sedán         | 50             |
 | 104        | 18/03/2023    | 204       | Ana           | Sedán         | 50             |
 
-Clave primaria: (AlquilerID, Vehiculo) (ya que una combinación única identifica cada fila).
+Clave primaria: _AlquilerID_, _Vehiculo_ 
 
-Segunda Forma Normal (2FN)
+### Segunda Forma Normal (2FN)
 
 __Identificación de dependencias funcionales:__
     *ClienteID → ClienteNombre (los datos del cliente dependen de ClienteID).
@@ -35,7 +37,7 @@ __Identificación de dependencias funcionales:__
 __Paso 2: Crear tablas para eliminar dependencias parciales.__
 Se crean tablas para separar Clientes, Vehiculos y Alquileres.
 
-Tabla Clientes
+Tabla `Clientes`
 
 | ClienteID | ClienteNombre |
 |-----------|---------------|
@@ -44,9 +46,9 @@ Tabla Clientes
 | 203       | Pedro         |
 | 204       | Ana           |
 
-Clave primaria: `ClienteID`
+Clave primaria: _ClienteID_
 
-Tabla Vehiculos
+Tabla `Vehiculos`
 
 | Vehiculo      | PrecioVehiculo |
 |---------------|----------------|
@@ -56,9 +58,9 @@ Tabla Vehiculos
 | Pickup        | 65             |
 | Van           | 60             |
 
-Clave primaria: Vehiculo
+Clave primaria: _Vehiculo_
 
-Tabla Alquileres
+Tabla `Alquileres`
 
 | AlquilerID | FechaAlquiler | ClienteID |
 |------------|---------------|-----------|
@@ -67,9 +69,9 @@ Tabla Alquileres
 | 103        | 15/03/2023    | 203       |
 | 104        | 18/03/2023    | 204       |
 
-Clave primaria: AlquilerID
+Clave primaria: _AlquilerID_
 
-Tabla DetalleAlquiler
+Tabla `DetalleAlquiler`
 
 | AlquilerID | Vehiculo      |
 |------------|---------------|
