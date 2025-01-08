@@ -42,7 +42,7 @@
 
 ![alt text](image-5.png)
 
-_El resultado es 1 (true), lo que confirma que, bajo el collation mencionado `ó`se considera equivalente a `o`._
+_El resultado es 1 (igual), lo que confirma que, bajo el collation mencionado `ó`se considera equivalente a `o`._
 
 *Compara si `ó` es diferente de `o` utilizando el collation `utf8mb4_0900_as_ci.`
 
@@ -50,7 +50,7 @@ _El resultado es 1 (true), lo que confirma que, bajo el collation mencionado `ó
 
 ![alt text](image-6.png)
 
-_El resultado es 0 (false), lo cual significa que, bajo el collation mencionado, debido a su sensibilidad a acentos (as), `ó`no es equivalente a `o`._
+_El resultado es 0 (diferente), lo cual significa que, bajo el collation mencionado, debido a su sensibilidad a acentos (as), `ó`no es equivalente a `o`._
 
 ### Ejercicio 5.
 
