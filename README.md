@@ -16,9 +16,9 @@
 - [comandos-sql](./ut03-ejercicios/comandos-sql/comandos-sql.md)
 
 ## ut04-ejercicios
-- [ejercicio01](./ut04-ejercicios/ejercicio01.md)
-- [ejercicio02](./ut04-ejercicios/ejercicio02.md)
-- [ejercicio03](./ut04-ejercicios/ejercicio03.md)
-- [ejercicio04](./ut04-ejercicios/ejercicio04.md)
-- [ejercicio05](./ut04-ejercicios/ejercicio05.md)
-- [ejercicio06](./ut04-ejercicios/ejercicio06.md)
+- [ejercicio01](./ut04-ejercicios/ddl-1.md)
+- [ejercicio02](./ut04-ejercicios/ddl-2.md)
+- [ejercicio03](./ut04-ejercicios/ddl-3.md)
+- [ejercicio04](./ut04-ejercicios/ddl-4.md)
+- [ejercicio05](./ut04-ejercicios/ddl-5.md)
+- [ejercicio06](./ut04-ejercicios/ddl-6.md)
